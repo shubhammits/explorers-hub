@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+/* Center the login card */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background: linear-gradient(135deg, #121212, #1f1f2f);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.login-card {
+    background: rgba(30, 30, 47, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    width: 350px;
+    color: #fff;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.login-card h2 {
+    margin-bottom: 30px;
+    color: #00d8ff;
+    font-size: 2em;
+}
+
+.login-card input[type="text"],
+.login-card input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background: rgba(44, 44, 62, 0.8);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.login-card input:focus {
+    background: rgba(44, 44, 62, 1);
+}
+
+.login-card input::placeholder {
+    color: #aaa;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(90deg, #00d8ff, #0066ff);
+    color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.login-card button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 162, 0, 0.5);
+}
+
+.login-card p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+@media (max-width: 400px) {
+    .login-card {
+        width: 90%;
+        padding: 30px 20px;
+    }
+}
+</style>
+
+<div class="login-container">
+    <div class="login-card">
+        <h2>Admin Login</h2>
+        <form method="POST" action="{{ url_for('admin_login') }}">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Use default credentials: <strong>admin / admin123</strong></p>
+    </div>
+</div>
+{% endblock %}

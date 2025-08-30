@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="featured" style="max-width: 800px; margin: 60px auto; padding: 40px; background-color: #1e1e2f; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); color: #fff; text-align: center;">
+    <h2 style="font-size: 2.2em; margin-bottom: 25px; color: #00d8ff;">About Me</h2>
+    <p style="font-size: 1.1em; line-height: 1.8; color: #ccc;">
+        Hello! I am <span style="color:#00d8ff; font-weight:bold;">Shubham Nagariya</span>. I explore <span style="color:#00d8ff;">AGI</span>, build <span style="color:#00d8ff;">Python modules</span>, and experiment with <span style="color:#00d8ff;">low-risk business ventures</span>. Through this blog, I share my learnings, projects, and insights on <span style="color:#00d8ff;">modular systems</span> and <span style="color:#00d8ff;">entrepreneurship</span>.
+    </p>
+</section>
+
+<script>
+    const aboutSection = document.querySelector("section.featured");
+    aboutSection.addEventListener("mouseover", () => {
+        aboutSection.style.transform = "scale(1.02)";
+        aboutSection.style.transition = "transform 0.3s";
+    });
+    aboutSection.addEventListener("mouseout", () => {
+        aboutSection.style.transform = "scale(1)";
+    });
+</script>
+{% endblock %}

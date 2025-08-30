@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="featured">
+    <h2>My Projects</h2>
+    <div class="grid">
+        {% for project in projects %}
+        <div class="card">
+            <h3>{{ project.name }}</h3>
+            <a href="{{ project.link }}" class="btn">View on GitHub</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
